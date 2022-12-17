@@ -1,13 +1,20 @@
-
+.table{
+    margin: 50px;
+    border: 1px solid black;
+    border-radius: 4px;
+    border-collapse: collapse;
+}
 .tableEntry{
     text-align: center;
-    border: 1px solid white;
+    border: 1px solid;
+    
+}
+.tableHeader{
+    border: 1px solid;
 }
 .table{
     width: 50%;
-    border: 1px solid white;
+   
 }
 
-.tableHead{
-    display: table-header-group;
-}
+
