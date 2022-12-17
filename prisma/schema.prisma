@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model department {
+  dept_name  String       @id @db.VarChar(12)
+  building   String?      @db.VarChar(12)
+  budget     Decimal?     @db.Decimal(8, 2)
+  instructor instructor[]
+}
+
+model instructor {
+  id         String      @id @db.VarChar(5)
+  name       String      @db.VarChar(20)
+  dept_name  String     @db.VarChar(12)
+  salary     Decimal?    @db.Decimal(8, 2)
+  department department? @relation(fields: [dept_name], references: [dept_name], onUpdate: NoAction)
+}
