@@ -2,7 +2,25 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import styles from  '../styles/Index.module.css'
+import { Bar } from "react-chartjs-2";
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend,
+  } from 'chart.js';
 
+  ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend
+  );
 
 const Index: React.FC = ()=> {
     const [inst, setInst] = useState<any[]>([])
@@ -16,7 +34,7 @@ const Index: React.FC = ()=> {
         })
     })
     return(
-        
+        <div>
         <table className={styles.table}>
             <thead className={styles.tableHead}>
             <tr className={styles.tableRow}>
@@ -36,6 +54,21 @@ const Index: React.FC = ()=> {
             ))}
         </tbody>
        </table>
+       <div className={styles.barchart}>
+       <Bar
+       data = {{
+        labels:  inst.map( i => i.name),
+        datasets: [{
+            label: 'Salary',
+            data: inst.map(i => i.salary),
+            barThickness: 20
+        }
+        ]
+    
+       }}
+       />
+       </div>
+       </div>
     )
 }
 

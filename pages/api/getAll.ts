@@ -7,7 +7,13 @@ const prisma = new PrismaClient()
 export default async(req: NextApiRequest, res: NextApiResponse) =>{
   const data = req.body;
   try{
-    const result = await prisma.instructor.findMany();
+    const result = await prisma.instructor.findMany({
+      where:{
+        salary: {
+          gte: 70000
+        }
+      }
+    });
     res.status(200).json(result);
   }
   catch(err){
