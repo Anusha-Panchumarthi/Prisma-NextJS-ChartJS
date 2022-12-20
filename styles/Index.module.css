@@ -4,6 +4,7 @@
     border-radius: 4px;
     border-collapse: collapse;
 }
+
 .tableEntry{
     text-align: center;
     border: 1px solid;
@@ -12,13 +13,64 @@
 .tableHeader{
     border: 1px solid;
 }
+
 .table{
     width: 50%;
-   
 }
 
 .barchart{
     width: 50%;
 }
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #171923;
+    padding-left: 20px;
+    color: whitesmoke;
+    height: 50px;
+    box-shadow: 0px 17px 11px -3px rgba(0,0,0,0.1);
+    width: 100%;
+   
+}
+
+.main{
+    padding: 0px;
+    max-height: 40%;
+   
+   
+}
+
+.graphs{
+    margin-left: 200px;
+    display: grid;
+    padding: 10px;
+    column-gap: 20px;
+    row-gap: 5px;
+    width: 70%;
+    grid-template-columns: 1fr 1fr;
+   
+    height: 70%;
+}
+
+.graphBox{
+    display: flex;
+    border: 1px solid #A0AEC0;
+    border-radius: 4px;
+    padding:30px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+}
+
+.bars{
+    display: grid;
+    row-gap: 5px;
+    
+}
+
 
 

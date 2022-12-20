@@ -7,7 +7,7 @@ const prisma = new PrismaClient()
 export default async(req: NextApiRequest, res: NextApiResponse) =>{
   const data = req.body;
   try{
-    const result = await prisma.instructor.findMany();
+    const result = await prisma.department.findMany();
     res.status(200).json(result);
   }
   catch(err){
@@ -15,5 +15,3 @@ export default async(req: NextApiRequest, res: NextApiResponse) =>{
     res.status(403).json({err: "Error occurred!"});
   }
 };
-
-
